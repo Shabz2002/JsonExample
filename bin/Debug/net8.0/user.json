@@ -1,17 +1,16 @@
 [
     {
-        "Name": "John Doe",
-        "Age": 30,
-        "City": "New York"
+        "user_type": "admin",
+        "Name": "Alice Admin",
+        "Age": 35,
+        "City": "Seattle",
+        "Permissions": [ "AddUser", "DeleteUser" ]
     },
     {
-        "Name": "Jane Smith",
-        "Age": 25,
-        "City": "Los Angeles"
-    },
-    {
-        "Name": "Bob Johnson",
-        "Age": 40,
-        "City": "Chicago"
+        "user_type": "regular",
+        "Name": "Bob User",
+        "Age": 28,
+        "City": "Austin",
+        "SubscriptionLevel": "Premium"
     }
 ]
