@@ -16,13 +16,11 @@ namespace JsonExample
             public string City { get; set; }
         }
 
-        // AdminUser inherits from User
         public class AdminUser : User
         {
             public List<string> Permissions { get; set; }
         }
 
-        // RegularUser inherits from User
         public class RegularUser : User
         {
             public string SubscriptionLevel { get; set; }
@@ -30,13 +28,21 @@ namespace JsonExample
 
         static void Main(string[] args)
         {
-            string filePath = "user.json";
+            Console.WriteLine("Reading from user.json...");
+            ReadAndDisplayUsers("user.json");
 
-            if (File.Exists(filePath))
+            Console.WriteLine("\nReading from user_types.json...");
+            ReadAndDisplayUsers("user_types.json");
+
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
+        }
+
+        static void ReadAndDisplayUsers(string fileName)
+        {
+            if (File.Exists(fileName))
             {
-                string jsonResponse = File.ReadAllText(filePath);
-
-                // Parse JSON array manually for dynamic deserialization
+                string jsonResponse = File.ReadAllText(fileName);
                 JArray jsonArray = JArray.Parse(jsonResponse);
                 List<User> users = new List<User>();
 
@@ -47,18 +53,17 @@ namespace JsonExample
                     switch (userType)
                     {
                         case "admin":
-                            AdminUser admin = item.ToObject<AdminUser>();
-                            users.Add(admin);
+                            users.Add(item.ToObject<AdminUser>());
                             break;
-
                         case "regular":
-                            RegularUser regular = item.ToObject<RegularUser>();
-                            users.Add(regular);
+                            users.Add(item.ToObject<RegularUser>());
+                            break;
+                        default:
+                            users.Add(item.ToObject<User>()); // fallback
                             break;
                     }
                 }
 
-                // Output users
                 foreach (var user in users)
                 {
                     Console.WriteLine("----------------------");
@@ -80,11 +85,8 @@ namespace JsonExample
             }
             else
             {
-                Console.WriteLine("user.json not found!");
+                Console.WriteLine($"File not found: {fileName}");
             }
-
-            Console.WriteLine("\nPress any key to exit...");
-            Console.ReadKey();
         }
     }
 }

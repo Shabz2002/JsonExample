@@ -1,0 +1,16 @@
+[
+    {
+        "user_type": "admin",
+        "Name": "Super Admin",
+        "Age": 45,
+        "City": "San Francisco",
+        "Permissions": [ "ManageAll", "OverrideSettings" ]
+    },
+    {
+        "user_type": "regular",
+        "Name": "Charlie User",
+        "Age": 22,
+        "City": "Miami",
+        "SubscriptionLevel": "Basic"
+    }
+]

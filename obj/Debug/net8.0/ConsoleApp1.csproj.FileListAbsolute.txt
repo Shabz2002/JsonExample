@@ -17,3 +17,4 @@ C:\Users\shabz sheik\Downloads\project json\ConsoleApp1\ConsoleApp1\obj\Debug\ne
 C:\Users\shabz sheik\Downloads\project json\ConsoleApp1\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.genruntimeconfig.cache
 C:\Users\shabz sheik\Downloads\project json\ConsoleApp1\ConsoleApp1\obj\Debug\net8.0\ref\ConsoleApp1.dll
 C:\Users\shabz sheik\Downloads\project json\ConsoleApp1\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.sourcelink.json
+C:\Users\shabz sheik\Downloads\project json\ConsoleApp1\ConsoleApp1\bin\Debug\net8.0\user_types.json
